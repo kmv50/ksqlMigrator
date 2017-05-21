@@ -1,10 +1,15 @@
-QT += qml quick
+QT += qml quick sql
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    viewengine.cpp \
+    enginevalues.cpp \
+    control.cpp \
+    settings.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    resources.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -27,3 +32,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    viewengine.h \
+    enginevalues.h \
+    control.h \
+    baseclass.h \
+    settings.h
+
+
+LIBS += -L$$PWD/libs/KsqlConnector/ -lKsqlConnector
+
+INCLUDEPATH += $$PWD/libs/KsqlConnector
+DEPENDPATH += $$PWD/libs/KsqlConnector

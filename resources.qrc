@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/bg_dotted.gif</file>
+        <file>Resources/mobile-nav.png</file>
+    </qresource>
+</RCC>
